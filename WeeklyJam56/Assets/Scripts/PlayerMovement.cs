@@ -2,10 +2,11 @@
 
 public class PlayerMovement : MonoBehaviour {
 
-
-    public CharacterController2D controller;
+    private CharacterController2D controller;
 
     public float runSpeed = 40f;
+
+    public bool canMove = true;
 
     private float horizontalMove;
     private bool jump = false;
@@ -15,17 +16,21 @@ public class PlayerMovement : MonoBehaviour {
     private void Start()
     {
         gm = FindObjectOfType<GameManager>();
+        controller = FindObjectOfType<CharacterController2D>();
     }
 
     private void Update ()
     {
         if (gm.allowGameplayInputs)
         {
-            horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
-
-            if (Input.GetButtonDown("Jump"))
+            if (canMove)
             {
-                jump = true;
+                horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
+
+                if (Input.GetButtonDown("Jump"))
+                {
+                    jump = true;
+                }
             }
         }
         else
