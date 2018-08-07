@@ -3,6 +3,7 @@
 public class PlayerMovement : MonoBehaviour {
 
     private CharacterController2D controller;
+    public Animator animator;
 
     public float runSpeed = 40f;
 
@@ -25,10 +26,14 @@ public class PlayerMovement : MonoBehaviour {
         {
             if (canMove)
             {
+                
                 horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
+
+                animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
 
                 if (Input.GetButtonDown("Jump"))
                 {
+                    animator.SetBool("IsJumping", true);
                     jump = true;
                 }
             }
@@ -43,5 +48,10 @@ public class PlayerMovement : MonoBehaviour {
     {
         controller.Move(horizontalMove * Time.fixedDeltaTime ,false, jump);
         jump = false;
+    }
+
+    public void OnLanding()
+    {
+        animator.SetBool("IsJumping", false);
     }
 }

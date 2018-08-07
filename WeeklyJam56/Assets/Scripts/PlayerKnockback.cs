@@ -28,7 +28,7 @@ public class PlayerKnockback : MonoBehaviour {
     private IEnumerator CharacterKnockback(Collision2D collision)
     {
         pMove.canMove = false;
-
+        pMove.animator.SetTrigger("IsKnocked");
 
         Vector2 knockDirection = rb.position - (Vector2)collision.transform.position;
         knockDirection *= knockForce;

@@ -113,6 +113,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!95 &69151985 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 95094587228434736, guid: 0e33835afe758df40bb37ef497383bf4,
+    type: 2}
+  m_PrefabInternal: {fileID: 1950269933}
 --- !u!1 &170076733
 GameObject:
   m_ObjectHideFlags: 0
@@ -179,25 +184,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!1 &197526849 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1018330529620524, guid: 0e33835afe758df40bb37ef497383bf4,
+--- !u!114 &197526850 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114152423213241138, guid: 0e33835afe758df40bb37ef497383bf4,
     type: 2}
   m_PrefabInternal: {fileID: 1950269933}
---- !u!114 &197526854
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 197526849}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1ad1918313e07049a536d01aa5d0f16, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  knockForce: 500
-  xForceMultiplier: 3
-  knockDuration: 1
+  m_Script: {fileID: 11500000, guid: 6867f821a0ed02b4e9bdbf5098786d0d, type: 3}
 --- !u!4 &209954764 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4544452195456482, guid: 0e33835afe758df40bb37ef497383bf4,
@@ -666,6 +658,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1113833040}
   - component: {fileID: 1113833039}
+  - component: {fileID: 1113833041}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -701,6 +694,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1113833041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1113833038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b27b41b326b55a469c62276eb2cc147, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startPanel: {fileID: 0}
+  pausePanel: {fileID: 0}
+  tutorialPanel: {fileID: 0}
+  gamePanel: {fileID: 0}
+  endPanel: {fileID: 0}
+  ResumeSoundButton: {fileID: 0}
+  MuteSoundButton: {fileID: 0}
 --- !u!1 &1195299438
 GameObject:
   m_ObjectHideFlags: 0
@@ -1105,6 +1116,29 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.16}
   m_EdgeRadius: 0
+--- !u!1 &1549771022 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1032533191254672, guid: 3ce5f6ca281e2254390e401d9512bbd0,
+    type: 2}
+  m_PrefabInternal: {fileID: 1780851696}
+--- !u!95 &1549771025
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1549771022}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 206a9958158378a4ebfd4f366bd204a8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1567754639
 GameObject:
   m_ObjectHideFlags: 0
@@ -1391,6 +1425,31 @@ Prefab:
       propertyPath: limitDistance
       value: 1.9
       objectReference: {fileID: 0}
+    - target: {fileID: 4086636790151998, guid: 3ce5f6ca281e2254390e401d9512bbd0, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4076309375824702, guid: 3ce5f6ca281e2254390e401d9512bbd0, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4086636790151998, guid: 3ce5f6ca281e2254390e401d9512bbd0, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4086636790151998, guid: 3ce5f6ca281e2254390e401d9512bbd0, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4086636790151998, guid: 3ce5f6ca281e2254390e401d9512bbd0, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212565618701470510, guid: 3ce5f6ca281e2254390e401d9512bbd0,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ce5f6ca281e2254390e401d9512bbd0, type: 2}
   m_IsPrefabAsset: 0
@@ -1404,7 +1463,7 @@ Prefab:
     - target: {fileID: 114842571191233258, guid: 0e33835afe758df40bb37ef497383bf4,
         type: 2}
       propertyPath: OnLandEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4544452195456482, guid: 0e33835afe758df40bb37ef497383bf4, type: 2}
       propertyPath: m_LocalPosition.x
@@ -1438,11 +1497,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 212433907963100066, guid: 0e33835afe758df40bb37ef497383bf4,
+    - target: {fileID: 114152423213241138, guid: 0e33835afe758df40bb37ef497383bf4,
         type: 2}
-      propertyPath: m_SortingOrder
-      value: 5
-      objectReference: {fileID: 0}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 69151985}
     - target: {fileID: 114842571191233258, guid: 0e33835afe758df40bb37ef497383bf4,
         type: 2}
       propertyPath: OnLandEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -1452,6 +1511,21 @@ Prefab:
         type: 2}
       propertyPath: OnLandEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114842571191233258, guid: 0e33835afe758df40bb37ef497383bf4,
+        type: 2}
+      propertyPath: OnLandEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 197526850}
+    - target: {fileID: 114842571191233258, guid: 0e33835afe758df40bb37ef497383bf4,
+        type: 2}
+      propertyPath: OnLandEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnLanding
+      objectReference: {fileID: 0}
+    - target: {fileID: 114842571191233258, guid: 0e33835afe758df40bb37ef497383bf4,
+        type: 2}
+      propertyPath: OnLandEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e33835afe758df40bb37ef497383bf4, type: 2}

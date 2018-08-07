@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 50540395540098124}
   - component: {fileID: 58483964475021852}
   - component: {fileID: 114152423213241138}
+  - component: {fileID: 114071212513791962}
   m_Layer: 9
   m_Name: Player
   m_TagString: Untagged
@@ -54,6 +55,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4780892114982514}
   - component: {fileID: 212433907963100066}
+  - component: {fileID: 95094587228434736}
   m_Layer: 9
   m_Name: Sprite
   m_TagString: Untagged
@@ -126,7 +128,7 @@ Transform:
   m_GameObject: {fileID: 1176659779101494}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4544452195456482}
   m_RootOrder: 0
@@ -166,6 +168,38 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!95 &95094587228434736
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1176659779101494}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d8509f397f4c5b043a0e3d82b35c0dcb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114071212513791962
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1018330529620524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1ad1918313e07049a536d01aa5d0f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knockForce: 500
+  xForceMultiplier: 3
+  knockDuration: 1
 --- !u!114 &114152423213241138
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -177,8 +211,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6867f821a0ed02b4e9bdbf5098786d0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: {fileID: 114842571191233258}
   runSpeed: 40
+  canMove: 1
 --- !u!114 &114842571191233258
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -244,7 +278,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -579188871
   m_SortingLayer: 2
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
