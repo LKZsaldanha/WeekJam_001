@@ -10,13 +10,27 @@ public class PlayerMovement : MonoBehaviour {
     private float horizontalMove;
     private bool jump = false;
 
+    private GameManager gm;
+
+    private void Start()
+    {
+        gm = FindObjectOfType<GameManager>();
+    }
+
     private void Update ()
     {
-        horizontalMove = Input.GetAxisRaw("Horizontal")* runSpeed;
-
-        if (Input.GetButtonDown("Jump"))
+        if (gm.allowGameplayInputs)
         {
-            jump = true;
+            horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
+
+            if (Input.GetButtonDown("Jump"))
+            {
+                jump = true;
+            }
+        }
+        else
+        {
+            horizontalMove = 0;            
         }
 	}
 
