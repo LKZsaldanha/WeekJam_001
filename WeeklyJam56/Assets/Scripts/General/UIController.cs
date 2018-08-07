@@ -12,12 +12,8 @@ public class UIController : MonoBehaviour {
     private GameManager gm;
     private UIState currentUIState;
 
-    public Text highScoreLabel;
-    public Text endCurrentScoreLabel;
-
     public GameObject ResumeSoundButton;
     public GameObject MuteSoundButton;
-    public GameObject QuitButton;
 
     private void Start ()
     {
