@@ -5,7 +5,7 @@ AnimationClip:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: NPC_Walk
+  m_Name: NPC_JumpAir
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -19,13 +19,13 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 21300000, guid: 1bcd1f0e0a0e49043aa3b33e27f33a8e, type: 3}
+      value: {fileID: 21300000, guid: adba51cfd5cf4cd4fa749068afc72711, type: 3}
     - time: 0.125
-      value: {fileID: 21300000, guid: c677c2f032ec09e4e8fe4f20ed859ed3, type: 3}
+      value: {fileID: 21300000, guid: 0d291ffa0a2de8d47ac0626bda02fce0, type: 3}
     - time: 0.25
-      value: {fileID: 21300000, guid: a0fa6a2433fc48b478dad93461014e8c, type: 3}
+      value: {fileID: 21300000, guid: 8669bb947994bed449c2bb2d4663e604, type: 3}
     - time: 0.375
-      value: {fileID: 21300000, guid: 789e879a50b9b67449ef45c82cfa5391, type: 3}
+      value: {fileID: 21300000, guid: 8bd1e9e02ab78de47894c27383a41a35, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -45,10 +45,10 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 21300000, guid: 1bcd1f0e0a0e49043aa3b33e27f33a8e, type: 3}
-    - {fileID: 21300000, guid: c677c2f032ec09e4e8fe4f20ed859ed3, type: 3}
-    - {fileID: 21300000, guid: a0fa6a2433fc48b478dad93461014e8c, type: 3}
-    - {fileID: 21300000, guid: 789e879a50b9b67449ef45c82cfa5391, type: 3}
+    - {fileID: 21300000, guid: adba51cfd5cf4cd4fa749068afc72711, type: 3}
+    - {fileID: 21300000, guid: 0d291ffa0a2de8d47ac0626bda02fce0, type: 3}
+    - {fileID: 21300000, guid: 8669bb947994bed449c2bb2d4663e604, type: 3}
+    - {fileID: 21300000, guid: 8bd1e9e02ab78de47894c27383a41a35, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
