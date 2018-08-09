@@ -200,6 +200,30 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1018330529620524, guid: 0e33835afe758df40bb37ef497383bf4,
     type: 2}
   m_PrefabInternal: {fileID: 1950269933}
+--- !u!114 &304748405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 304748404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02e88850270bc734c86db8911c976d99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  recording: 1
+--- !u!114 &304748406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 304748404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fafd116643149cb4f8832537a3401af0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fileName: Save_001
 --- !u!95 &304748409
 Animator:
   serializedVersion: 3
