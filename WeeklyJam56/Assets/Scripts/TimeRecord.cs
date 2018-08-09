@@ -16,15 +16,19 @@ public class PointInTime {
 
 public class TimeRecord : MonoBehaviour {
 
-    public bool recording = false;
+    public bool recording = true;
+    public bool playingReplay = false;
+
+
+
+    public bool AutoPlaySavedReplay = false;
 
 
     public List<PointInTime> pointsInTime;
 
     public List<PointInTime> pointsInTime_ToSave;
+    public List<PointInTime> pointsInTime_Loaded = new List<PointInTime>();
 
-    private int currentReplayFrame = 0;
-    
 
 
     private void Start()
@@ -38,19 +42,45 @@ public class TimeRecord : MonoBehaviour {
         if (Input.GetButtonDown("Fire1"))
         {
             recording = false;
+            pointsInTime_ToSave = pointsInTime;
+        }
+
+        if (Input.GetButtonDown("Fire2"))
+        {
+            recording = false;
+            playingReplay = true;
         }
     }
 
     private void FixedUpdate()
     {
-        if (recording)
+        if (AutoPlaySavedReplay)
         {
-            Record();
+            if (pointsInTime.Count > 0)
+            {
+                Replay();
+            }
+            else {
+                recording = false;
+                playingReplay = false;
+                for (int i = 0; i < pointsInTime_Loaded.Count; i++)
+                {
+                    pointsInTime.Add(pointsInTime_Loaded[i]);
+                }
+            }
         }
         else
         {
-            pointsInTime_ToSave = pointsInTime;
-            Replay();
+            if (playingReplay)
+            {
+                //pointsInTime_ToSave = pointsInTime;
+                Replay();
+            }
+
+            if (recording)
+            {
+                Record();
+            }
         }
     }
 
@@ -62,6 +92,10 @@ public class TimeRecord : MonoBehaviour {
             transform.position = pointInTime.position;
             transform.rotation = pointInTime.rotation;
             pointsInTime.RemoveAt(0);
+        }
+        else
+        {
+            playingReplay = false;
         }
     }
 
