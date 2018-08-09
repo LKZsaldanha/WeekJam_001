@@ -13,13 +13,14 @@ public class FileIO : MonoBehaviour {
 
     private List<PointInTime> pointsInTimeToSave;
 
-    public List<PointInTime> loadedPointsInTime;
+    public List<PointInTime> loadedPointsInTime = new List<PointInTime>();
     private List<Vector3> loadedPositions;
     private List<Quaternion> loadedRotations;
 
     private void Start()
     {
         timeRecord = GetComponent<TimeRecord>();
+        LoadReplay();
     }
 
     private void Update()
@@ -28,6 +29,7 @@ public class FileIO : MonoBehaviour {
         {
             SaveReplay();
         }
+
     }
 
     public void SaveReplay()
@@ -41,13 +43,13 @@ public class FileIO : MonoBehaviour {
         {
             PointInTime pointInTime = pointsInTimeToSave[0];
             string tmpPos = pointInTime.position.x.ToString() + ":" +
-                pointInTime.position.z.ToString() + ":" +
+                pointInTime.position.y.ToString() + ":" +
                 pointInTime.position.z.ToString();
 
-            string tmpRot = pointInTime.rotation.w.ToString() + ":" +
-                pointInTime.rotation.x.ToString() + ":" +
+            string tmpRot = pointInTime.rotation.x.ToString() + ":" +
                 pointInTime.rotation.y.ToString() + ":" +
-                pointInTime.rotation.z.ToString();
+                pointInTime.rotation.z.ToString() + ":" +
+                pointInTime.rotation.w.ToString();
 
             string output = tmpPos + ":" + tmpRot;
             writer.WriteLine(output);
@@ -68,15 +70,25 @@ public class FileIO : MonoBehaviour {
 
     public void LoadReplay()
     {
-
         loadedPositions = new List<Vector3>();
         loadedRotations = new List<Quaternion>();
+        ReadFromFile();
+        for (int i = 0; i < loadedPointsInTime.Count; i++)
+        {
+            timeRecord.pointsInTime_Loaded.Add(loadedPointsInTime[i]);
+        }
     }
 
-    private void ReadFromFile(string name)
+    private void ReadFromFile()
     {
-        string fileToReadName = filePath + name + ".txt";
+        string fileToReadName = filePath + fileName + ".txt";
+        if (!File.Exists(fileToReadName))
+        {
+            print("File not found");
+            return;
+        }
         StreamReader reader = new StreamReader(fileToReadName);
+        
 
         string s = reader.ReadLine();
 
